@@ -1,0 +1,56 @@
+:root {
+  /* Farver */
+  --baggrund: #fffef2;
+  --topbar: #2676f3;
+  --maintekst: #000000;
+  --secondary: #f75443;
+
+  /* Typografi */
+  --xxxs: 15px;
+  --xxs: 20px;
+  --xs: 25px;
+  --s: 30px;
+  --m: 35px;
+  --l: 40px;
+  --xl: 50px;
+  --xxl: 60px;
+  --xxxl: 70px;
+
+  --thin: 100;
+  --extralight: 200;
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+  --bold: 700;
+
+  /* Spacing */
+  --space-xxxs: 0.25rem;
+  --space-xxs: 0.375rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 2.5rem;
+  --space-xxxl: 3rem;
+
+  /* Border radius */
+  --border-radius-box: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "aviano-sans", sans-serif;
+  background-color: var(--baggrund);
+  color: var(--maintekst);
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

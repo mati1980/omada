@@ -1,0 +1,180 @@
+---
+---
+
+<header>
+  <div class="topbar">
+    <p>🇩🇰 Free shipping in Denmark over €150</p>
+    <div class="social">
+      <ul>
+        <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <nav class="mellembar">
+    <div class="omada_links">
+      <a href="#">omada.wine</a>
+      <a href="#">omada.deli</a>
+    </div>
+    <div class="omada_h">omada.deli</div>
+    <div class="deli_links nav_menu">
+      <a href="#">news & events</a>
+      <a href="#">quiz</a>
+      <a href="#">deli goods</a>
+      <a href="#">about</a>
+      <div class="nav_icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+      <div class="nav_omada_links">
+        <a href="#">omada.wine</a>
+        <a href="#">omada.deli</a>
+      </div>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-regular fa-user"></i>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+    <div class="burger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+  <script src="../scripts/burger.js"></script>
+</header>
+
+<style>
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+  i {
+    color: var(--baggrund);
+  }
+  .icons i {
+    color: var(--maintekst);
+    margin-right: 2rem;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: var(--topbar);
+    color: var(--baggrund);
+  }
+  .mellembar {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    grid-template-rows: 1fr 20px;
+  }
+  a {
+    text-decoration: none;
+    color: var(--maintekst);
+  }
+  .omada_h {
+    margin: auto;
+    font-size: var(--l);
+    font-weight: 700;
+  }
+  .omada_links {
+    align-items: center;
+    display: flex;
+    margin: 3rem;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .deli_links {
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto;
+  }
+  .deli_links a {
+    margin: 1.5rem;
+  }
+  .icons {
+    grid-column: 3;
+    grid-row: 2;
+    margin-left: auto;
+  }
+
+  /*BURGER*/
+  .burger,
+  .nav_omada_links,
+  .nav_icons {
+    display: none;
+  }
+  @media (max-width: 1050px) {
+    .omada_links,
+    .icons {
+      display: none;
+    }
+    .burger {
+      display: block;
+      cursor: pointer;
+      margin-left: auto;
+    }
+    .bar {
+      display: block;
+      height: 3px;
+      width: 30px;
+      margin: 5px;
+      background-color: var(--maintekst);
+      border-radius: 0px;
+    }
+    .burger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .burger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .burger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    .mellembar {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    .omada_h {
+      margin: 0;
+      margin-top: 3px;
+      z-index: 10;
+    }
+    .nav_omada_links,
+    .nav_icons {
+      display: block;
+      padding-top: 3rem;
+    }
+    .nav_menu {
+      display: none;
+    }
+    .nav_menu {
+      display: flex;
+      position: fixed;
+      flex-direction: column;
+      background-color: var(--baggrund);
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: 0.3s;
+      top: 0;
+      left: 100%;
+      padding-top: 5rem;
+    }
+    .nav_icons {
+      color: var(--maintekst);
+    }
+    .nav_menu.active {
+      top: 0;
+      left: 0;
+    }
+  }
+</style>
