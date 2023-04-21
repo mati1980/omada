@@ -1,0 +1,54 @@
+---
+---
+
+<section class="location">
+  <div class="right">
+    <h1>omada wine & deli</h1>
+    <img src="/img/location.webp" alt="location" />
+  </div>
+  <div class="left">
+    <h2>location: østerbro</h2>
+    <p>Øster Farimagsgade 26 2100 København Ø</p>
+    <p class="dif">Here, we curate your simple needs for life’s better necessities; wine & food.</p>
+    <p class="dif">However, Omada Wine & Deli is much more than just a bottleshop.</p>
+  </div>
+</section>
+
+<style>
+  .dif {
+    font-weight: 600;
+    font-size: var(--xxs);
+    text-align: left;
+  }
+  h1,
+  h2 {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  h1 {
+    font-size: var(--m);
+  }
+  img {
+    padding: 2rem;
+  }
+  p {
+    padding: 1rem;
+    text-align: center;
+  }
+  @media (min-width: 1050px) {
+    .location {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 3rem;
+      margin-left: 10rem;
+      margin-right: 10rem;
+    }
+    .right {
+      grid-column: 2;
+    }
+    .left {
+      grid-row: 1;
+      margin-right: 3rem;
+    }
+  }
+</style>

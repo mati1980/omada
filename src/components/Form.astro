@@ -1,0 +1,39 @@
+---
+---
+
+<form>
+  <label for="name">Navn:</label>
+  <input type="text" name="name" required />
+  <label for="overskrift">Overskrift:</label>
+  <input type="text" name="overskrift" required />
+  <label for="text">Tekst:</label>
+  <input type="text" name="text" required />
+  <button>Send</button>
+</form>
+
+<script>
+  const url = "https://slwqlogljaevgyygyqij.supabase.co/rest/v1/testimonials";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsd3Fsb2dsamFldmd5eWd5cWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTY2OTMsImV4cCI6MTk5NzI5MjY5M30.2_9FZFrf_2_PRjwvFTPUQ36COp_dqmghTwYfhbY5Y18";
+
+  const form = document.querySelector("form");
+  form.addEventListener("submit", sendForm);
+
+  function sendForm(event) {
+    event.preventDefault();
+    const formData = form.elements;
+    let name = formData.name.value;
+    let overskrift = formData.overskrift.value;
+    let text = formData.text.value;
+    console.log(formData);
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, overskrift, text }),
+    });
+  }
+</script>

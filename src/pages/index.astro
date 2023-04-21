@@ -1,7 +1,45 @@
 ---
 import MainLay from "../layouts/MainLay.astro";
+import Video from "../components/Video.astro";
+import Marquee from "../components/Marquee.astro";
+import Location from "../components/Location.astro";
+import Line from "../components/Line.astro";
+import Section from "../components/Section.astro";
+import Calender from "../components/Calender.astro";
+import Quiz from "../components/Quiz.astro";
+import Form from "../components/Form.astro";
+import TestCard from "../components/TestCard.astro";
 ---
 
 <MainLay title="deli">
-  <main></main>
+  <main>
+    <Video />
+    <Marquee />
+    <section class="inline">
+      <Location />
+      <Line />
+      <Section side="left" header="omada & friends" imgPath="/img/omadafriends1.webp" imgPath1="/img/omadafriends2.webp" imgPath2="/img/omadafriends3.webp" tekst="Come by every second friday for a plate of food and a glass of wine whenever one of our friends from the industry is cooking a “plat du jour”." />
+      <Section side="right" header="omada x artist" imgPath="/img/omadafriends1.webp" imgPath1="/img/omadafriends2.webp" imgPath2="/img/omadafriends3.webp" tekst="Not only do we invite our friends over we also collaborate with artists around town every month because there is no better combination than wine, charcuterie and art. Come get your hands on a limited omadaxartist poster or totebag together with a juicy bottle!" />
+      <Section side="left" header="open wine tastings" imgPath="/img/omadafriends1.webp" imgPath1="/img/omadafriends2.webp" imgPath2="/img/omadafriends3.webp" tekst="Once a month you’re invited to join our open wine tasting and sample the curated selection of natural wines in omada.wine’s monthly subscription box." />
+      <Calender />
+      <Line />
+      <Quiz />
+      <Line />
+      <Section side="right" header="goods" imgPath="/img/omadafriends1.webp" imgPath1="/img/omadafriends2.webp" imgPath2="/img/omadafriends3.webp" />
+      <Line />
+      <TestCard />
+      <Form />
+    </section>
+  </main>
 </MainLay>
+
+<style>
+  .inline {
+    margin-inline: 2%;
+  }
+  @media (min-width: 1050px) {
+    .inline {
+      margin-inline: 8%;
+    }
+  }
+</style>

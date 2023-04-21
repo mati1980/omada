@@ -54,3 +54,9 @@ img {
   height: auto;
   display: block;
 }
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+h1 {
+  font-size: var(--m);
+}

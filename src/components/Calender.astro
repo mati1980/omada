@@ -1,0 +1,56 @@
+---
+---
+
+<section>
+  <h1>Calender</h1>
+  <p class="fed">What's happening in the store over the coming weeks...</p>
+  <span class="hmm"> <span class="dato"><h4>apr</h4><p class="tal">21</p></span><p class="des">Plat du Jour: Chicken Fricassée</p></span>
+  <span class="hmm"> <span class="dato"><h4>apr</h4><p class="tal">28</p></span><p class="des">#omadaxartist: @gordon.zola collab</p></span>
+  <span class="hmm"> <span class="dato"><h4>may</h4><p class="tal">5</p></span><p class="des">Plat du Jour: Grill & Wheats</p></span>
+</section>
+
+<style>
+  .dato {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-color: var(--maintekst);
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .hmm {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .fed {
+    font-weight: 600;
+    font-size: var(--xxs);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  h4 {
+    color: var(--baggrund);
+    text-align: center;
+    padding-top: 10%;
+    font-weight: 400;
+    font-size: var(--xxxs);
+  }
+  .tal {
+    color: var(--baggrund);
+    text-align: center;
+    font-size: var(--s);
+    font-weight: 200;
+  }
+  @media (min-width: 1050px) {
+    .des {
+      font-size: var(--xxs);
+    }
+    .hmm {
+      gap: 5%;
+    }
+    section {
+      margin-left: 10%;
+    }
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+---
+
+<div class="marquee_left">
+  <h2 class="marquee_content_l">wine, cider, beer, coffee, cheese, charcuterie, olive oil, bread, eggs, milk</h2>
+  <h2 class="marquee_content_l">wine, cider, beer, coffee, cheese, charcuterie, olive oil, bread, eggs, milk</h2>
+</div>
+<style>
+  h2 {
+    color: #f75443;
+    font-weight: 400;
+    font-size: var(--xs);
+    margin-top: 2rem;
+  }
+  .marquee_left {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    gap: 5px;
+    z-index: -1;
+  }
+
+  .marquee_content_l {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    min-width: 100%;
+    animation-name: slide_left;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes slide_left {
+    from {
+      translate: 0 0;
+    }
+    to {
+      translate: -100% 0;
+    }
+  }
+</style>

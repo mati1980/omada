@@ -1,0 +1,39 @@
+---
+import Testimonial from "./Testimonial.astro";
+const url = "https://slwqlogljaevgyygyqij.supabase.co/rest/v1/testimonials?approved=is.true";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsd3Fsb2dsamFldmd5eWd5cWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTY2OTMsImV4cCI6MTk5NzI5MjY5M30.2_9FZFrf_2_PRjwvFTPUQ36COp_dqmghTwYfhbY5Y18";
+
+const response = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: key,
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+});
+const udsagn = await response.json();
+
+function getFirstNChars(str, length) {
+  //vus begrænset antal tegn
+  return str.substring(0, length);
+}
+---
+
+<h1>what you think</h1>
+<span class="box">
+  <ul>
+    {
+      udsagn.map((testimonial) => {
+        return <Testimonial name={testimonial.name} overskrift={testimonial.overskrift} text={getFirstNChars(testimonial.text, 30) + "..."} link={"/testimonial/" + testimonial.id} />;
+      })
+    }
+  </ul>
+</span>
+
+<style>
+  ul {
+    display: flex;
+    gap: 5%;
+    justify-content: center;
+  }
+</style>
