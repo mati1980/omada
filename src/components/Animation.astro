@@ -1,14 +1,19 @@
 ---
 ---
 
+<!-- Importerer LottieFiles (bemærk is:inline) -->
 <script is:inline src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+<!-- Tilføjer Lottie player med loop og autoplay -->
 <lottie-player src="/assets/pil.json" background="transparent" speed="1" loop autoplay></lottie-player>
 
 <style>
+  /* Animationen skal kun være på desktop version */
   lottie-player {
     display: none;
   }
+
+  /* Bestemmer str og placerer i midten */
   @media (min-width: 1050px) {
     lottie-player {
       display: block;

@@ -1,7 +1,8 @@
 ---
 ---
 
-<div class="form">
+<!-- Gør h1 og form til en sektion -->
+<section class="form">
   <h1>or if you haven't told us yet</h1>
   <form>
     <label for="name">What is your name?</label>
@@ -12,7 +13,7 @@
     <input type="text" name="text" required />
     <button>submit</button>
   </form>
-</div>
+</section>
 
 <style>
   h1 {
@@ -27,25 +28,30 @@
     background-color: var(--baggrund);
   }
   label {
-    color: var(--baggrund);
+    color: var(--maintekst);
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: var(--xxs);
   }
   button {
     font-family: "aviano-sans", sans-serif;
-    color: var(--baggrund);
+    color: var(--maintekst);
     font-size: var(--xs);
-    background-color: #ff675b;
-    border: solid var(--baggrund) 2px;
+    background-color: var(--footer);
+    border: solid var(--maintekst) 2px;
     padding: 0.5rem;
     margin: auto;
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  button:hover {
+    background-color: var(--maintekst);
+    color: var(--baggrund);
+  }
   form {
     display: grid;
     max-width: 350px;
-    background-color: #ff675b;
+    background-color: var(--footer);
     padding: 1.5rem;
     margin: auto;
   }
@@ -60,27 +66,40 @@
 </style>
 
 <script>
+  //Tilføjer konstanter med supabase database link og api key
   const url = "https://slwqlogljaevgyygyqij.supabase.co/rest/v1/testimonials";
   const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsd3Fsb2dsamFldmd5eWd5cWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTY2OTMsImV4cCI6MTk5NzI5MjY5M30.2_9FZFrf_2_PRjwvFTPUQ36COp_dqmghTwYfhbY5Y18";
 
+  //Tilføjer konstant med form tag og kalder funktionen sendForm når der klikkes på submit
   const form = document.querySelector("form");
   form.addEventListener("submit", sendForm);
 
+  //Når funktionen aktiveres modtager den et event
   function sendForm(event) {
+    //preventDefault så data ikke bliver sendt op i URL'en
     event.preventDefault();
+    //Opretter konstant med form data
     const formData = form.elements;
+    //Opretter variabler med name mail og text samt deres value/input
     let name = formData.name.value;
     let mail = formData.mail.value;
     let text = formData.text.value;
+    //Tjekker at det virker
     console.log(formData);
 
+    //Sender data afsted til databasen. Først fetcher (henter) vi URL'en:
     fetch(url, {
+      //Fortæller hvilken metoder vi bruger - POST bruger vi til at sende
       method: "POST",
+      //I headers skal vi bruge API key samt fortælle hvad for noget data vi sender
       headers: {
         apikey: key,
+        //Sender afsted i json format
         Accept: "application/json",
         "Content-Type": "application/json",
       },
+      //"Kroppen" på det vi sender er json, og det skal opfattes som en streng.
+      //Vores properties er name, mail og text.
       body: JSON.stringify({ name, mail, text }),
     });
   }

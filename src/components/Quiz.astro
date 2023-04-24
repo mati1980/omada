@@ -1,35 +1,28 @@
 ---
+import QuizBox from "./QuizBox.astro";
 ---
 
-<section>
+<section id="quiz">
   <h1>quiz of the month</h1>
   <p>Get your monthly knowledge about wine & deli...</p>
   <div class="quiz">
-    <span class="box"></span>
-    <span class="box"></span>
-    <span class="box"></span>
+    <QuizBox question="what does natural wine mean?" answer1="Wine that has been made outside and only comes inside when it’s bottled up." answer2="Wine where nothing artificial has been added the the grape growing or winemaking processes." answer3="Wine that are vegan." />
+    <QuizBox question="who is the next #omadaxartist?" answer1="@gordon.zola" answer2="@icon.visions" answer3="@evig_krig" />
+    <QuizBox question="what does plat du jour mean?" answer1="Plate with food" answer2="Specially prepared dish of the day" answer3="Dinner is served" />
   </div>
 </section>
-
-<style></style>
 
 <style>
   p {
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  .quiz {
-    display: flex;
-    gap: 5%;
-    justify-content: center;
-  }
-  .box {
-    display: block;
-    height: 300px;
-    width: 300px;
-    background-color: var(--maintekst);
-    border-radius: 0px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+
+  @media (min-width: 1050px) {
+    .quiz {
+      display: flex;
+      gap: 5%;
+      justify-content: center;
+    }
   }
 </style>

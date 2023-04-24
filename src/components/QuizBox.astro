@@ -1,0 +1,41 @@
+---
+const { question, answer1, answer2, answer3 } = Astro.props;
+---
+
+<span class="box">
+  <h2>{question}</h2>
+  <button>{answer1}</button>
+  <button>{answer2}</button>
+  <button>{answer3}</button>
+</span>
+
+<style>
+  .box {
+    display: block;
+    height: 350px;
+    width: 350px;
+    background-color: var(--maintekst);
+    margin: auto;
+    border-radius: 0px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+  }
+  h2 {
+    color: var(--baggrund);
+    margin: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: var(--xxxs);
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+  button {
+    background-color: var(--baggrund);
+    color: var(--maintekst);
+    border: none;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: 55px;
+    padding: 5px;
+  }
+</style>

@@ -1,26 +1,36 @@
 ---
 import Testimonial from "./Testimonial.astro";
+
+//Opretter konstanter for url og key. I url har vi tilføjet "is:true"
 const url = "https://slwqlogljaevgyygyqij.supabase.co/rest/v1/testimonials?approved=is.true";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsd3Fsb2dsamFldmd5eWd5cWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTY2OTMsImV4cCI6MTk5NzI5MjY5M30.2_9FZFrf_2_PRjwvFTPUQ36COp_dqmghTwYfhbY5Y18";
 
+//Opretter response konstant som bruger asynkron await fetch til at hente data ind fra databasen. Først fetcher (henter) vi URL'en:
 const response = await fetch(url, {
+  //Fortæller hvilken metoder vi bruger - GET bruger vi til at hente
   method: "GET",
+  //I headers skal vi bruge API key samt fortælle hvad for noget data vi henter
   headers: {
     apikey: key,
+    //Henter i json format
     Accept: "application/json",
     "Content-Type": "application/json",
   },
 });
+
+//Den json vi får fra ovenstående indsætter vi i en ny konstant
 const udsagn = await response.json();
 
 function getFirstNChars(str, length) {
-  //vus begrænset antal tegn
+  //vis begrænset antal tegn
   return str.substring(0, length);
 }
 ---
 
 <h1>what you think</h1>
 <span class="box">
+  <!-- Laver en ul liste med data fra databasen.
+    Bruger map til at mappe gennem udsagn så de enkelte testimonials returnerer komponenterne -->
   <ul>
     {
       udsagn.map((testimonial) => {
