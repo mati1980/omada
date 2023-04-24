@@ -1,12 +1,10 @@
 ---
+import Animation from "../components/Animation.astro";
 ---
 
 <span class="video_placeholder">
   <h2>thirsty? peckish? curious? we've got you covered!</h2>
-  <div class="arrow">
-    <span class="arrow_bar"></span>
-    <span class="arrow_bar"></span>
-  </div>
+  <Animation />
 </span>
 
 <style>
@@ -26,9 +24,6 @@
     color: var(--baggrund);
     font-weight: 400;
   }
-  .arrow {
-    display: none;
-  }
 
   @media (min-width: 1050px) {
     h2 {
@@ -42,22 +37,6 @@
       width: 100%;
       background-color: #f75443;
       border-radius: 0px;
-    }
-    .arrow_bar {
-      display: block;
-      height: 5px;
-      width: 40px;
-      background-color: var(--baggrund);
-      border-radius: 0px;
-      rotate: 45deg;
-    }
-    .arrow_bar:nth-child(2) {
-      transform: translateX(14px) translateY(-21px) rotate(90deg);
-    }
-    .arrow {
-      margin: auto;
-      display: block;
-      margin-bottom: 100px;
     }
   }
 </style>

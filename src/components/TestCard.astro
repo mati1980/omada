@@ -24,16 +24,18 @@ function getFirstNChars(str, length) {
   <ul>
     {
       udsagn.map((testimonial) => {
-        return <Testimonial name={testimonial.name} overskrift={testimonial.overskrift} text={getFirstNChars(testimonial.text, 30) + "..."} link={"/testimonial/" + testimonial.id} />;
+        return <Testimonial name={testimonial.name} text={getFirstNChars(testimonial.text, 50) + "..."} link={"/testimonial/" + testimonial.id} />;
       })
     }
   </ul>
 </span>
 
 <style>
-  ul {
-    display: flex;
-    gap: 5%;
-    justify-content: center;
+  @media (min-width: 1050px) {
+    ul {
+      display: flex;
+      gap: 5%;
+      justify-content: center;
+    }
   }
 </style>

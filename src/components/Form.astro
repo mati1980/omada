@@ -1,15 +1,63 @@
 ---
 ---
 
-<form>
-  <label for="name">Navn:</label>
-  <input type="text" name="name" required />
-  <label for="overskrift">Overskrift:</label>
-  <input type="text" name="overskrift" required />
-  <label for="text">Tekst:</label>
-  <input type="text" name="text" required />
-  <button>Send</button>
-</form>
+<div class="form">
+  <h1>or if you haven't told us yet</h1>
+  <form>
+    <label for="name">What is your name?</label>
+    <input type="text" name="name" required />
+    <label for="email">Type in your e-mail (anonymous):</label>
+    <input type="email" name="overskrift" required />
+    <label for="text">What do you think of Omada?</label>
+    <input type="text" name="text" required />
+    <button>submit</button>
+  </form>
+</div>
+
+<style>
+  h1 {
+    margin-bottom: 2rem;
+  }
+  input {
+    margin-bottom: 1rem;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: 0.5rem;
+    border: none;
+    margin-top: 0.5rem;
+    background-color: var(--baggrund);
+  }
+  label {
+    color: var(--baggrund);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: var(--xxs);
+  }
+  button {
+    font-family: "aviano-sans", sans-serif;
+    color: var(--baggrund);
+    font-size: var(--xs);
+    background-color: #ff675b;
+    border: solid var(--baggrund) 2px;
+    padding: 0.5rem;
+    margin: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  form {
+    display: grid;
+    max-width: 350px;
+    background-color: #ff675b;
+    padding: 1.5rem;
+    margin: auto;
+  }
+  @media (min-width: 1050px) {
+    .form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-items: center;
+      margin-top: 4rem;
+    }
+  }
+</style>
 
 <script>
   const url = "https://slwqlogljaevgyygyqij.supabase.co/rest/v1/testimonials";
@@ -22,7 +70,7 @@
     event.preventDefault();
     const formData = form.elements;
     let name = formData.name.value;
-    let overskrift = formData.overskrift.value;
+    let mail = formData.mail.value;
     let text = formData.text.value;
     console.log(formData);
 
@@ -33,7 +81,7 @@
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, overskrift, text }),
+      body: JSON.stringify({ name, mail, text }),
     });
   }
 </script>

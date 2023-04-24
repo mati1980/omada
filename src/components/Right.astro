@@ -1,0 +1,36 @@
+---
+---
+
+<script is:inline src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script is:inline src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+<lottie-player id="lottie" src="/assets/pil_right.json" background="transparent" speed="1" autoplay></lottie-player>
+
+<script>
+  LottieInteractivity.create({
+    player: "#lottie",
+    mode: "cursor",
+    actions: [
+      {
+        type: "hover",
+        forceFlag: false,
+      },
+    ],
+  });
+</script>
+
+<style>
+  lottie-player {
+    display: none;
+  }
+  @media (min-width: 1050px) {
+    lottie-player {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      margin-bottom: 100px;
+      border: solid white;
+    }
+  }
+</style>
