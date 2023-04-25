@@ -1,15 +1,14 @@
 ---
-const { name, text } = Astro.props;
-import Right from "./Right.astro";
+const { name, text, link } = Astro.props;
 ---
 
 <li class="testimonial">
   <h1>“</h1>
   <h2>{text}</h2>
   <p>{name}</p>
-  <div class="box">
+  <a href={link} class="box">
     <div class="arrow"></div>
-  </div>
+  </a>
 </li>
 
 <style>

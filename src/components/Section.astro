@@ -1,13 +1,25 @@
 ---
-const { header, imgPath, imgPath1, imgPath2, tekst, side } = Astro.props;
+const { header, imgPath, imgPath1, imgPath2, tekst, side, descri1, price1, descri2, price2, descri3, price3 } = Astro.props;
 ---
 
 <section class={side}>
   <h1>{header}</h1>
   <div class="billeder">
-    <img src={imgPath} alt="img" />
-    <img src={imgPath1} alt="img" />
-    <img src={imgPath2} alt="img" />
+    <div>
+      <img src={imgPath} alt="img" />
+      <p>{descri1}</p>
+      <p>{price1}</p>
+    </div>
+    <div>
+      <img src={imgPath1} alt="img" />
+      <p>{descri2}</p>
+      <p>{price2}</p>
+    </div>
+    <div>
+      <img src={imgPath2} alt="img" />
+      <p>{descri3}</p>
+      <p>{price3}</p>
+    </div>
   </div>
   <p>{tekst}</p>
 </section>
@@ -24,6 +36,11 @@ const { header, imgPath, imgPath1, imgPath2, tekst, side } = Astro.props;
       gap: 20px;
     }
   }
+  div p {
+    margin-bottom: 0;
+    font-size: var(--xxxs);
+    margin-right: 0%;
+  }
   p {
     margin-bottom: 4rem;
     margin-right: 30%;
@@ -36,7 +53,8 @@ const { header, imgPath, imgPath1, imgPath2, tekst, side } = Astro.props;
   img {
     max-width: 300px;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    height: 90%;
+    padding-bottom: 0.5rem;
   }
   .billeder {
     display: grid;

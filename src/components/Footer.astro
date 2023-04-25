@@ -1,12 +1,55 @@
 ---
 ---
 
-<footer></footer>
+<footer>
+  <div class="left">
+    <h4>omada.wine</h4>
+    <h4>The dedicated online hideout for the worldly cosmopolitans, drinking from home.</h4>
+  </div>
+  <div class="middle">
+    <h4>omada.deli</h4>
+    <h4>Omada Wine & Deli in Østerbro, Copenhagen, is the new omada.wine headquarters – and our brand new bottle shop and deli.</h4>
+    <p>Øster Farimagsgade 26 2100 København Ø</p>
+    <ul>
+      Open:
+      <li>Wednesdays 11–20</li>
+      <li>Thursdays 11–20</li>
+      <li>Fridays 11–20</li>
+      <li>Saturdays 11–20</li>
+      <li>Sundays 11–20</li>
+    </ul>
+  </div>
+  <div class="right">
+    <h4>newsletter</h4>
+    <p>Sign up to our free newsletter and stay in the loop with the latest news on arrivals and drops.</p>
+  </div>
+</footer>
 
 <style>
   footer {
+    display: grid;
+    gap: 10%;
     background-color: var(--footer);
     margin-top: 200px;
-    height: 300px;
+    padding: 3rem;
+  }
+  h4 {
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .middle p {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  ul,
+  li {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    list-style-type: none;
+  }
+  @media (min-width: 1050px) {
+    footer {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 </style>

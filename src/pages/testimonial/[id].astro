@@ -1,0 +1,41 @@
+---
+import Testimonial from "../../components/Testimonial.astro";
+import MainLay from "../../layouts/MainLay.astro";
+
+export async function getStaticPaths() {
+  //Opretter konstanter for url og key. I url har vi tilføjet "is:true"
+  const url = "https://slwqlogljaevgyygyqij.supabase.co/rest/v1/testimonials?approved=is.true";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNsd3Fsb2dsamFldmd5eWd5cWlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE3MTY2OTMsImV4cCI6MTk5NzI5MjY5M30.2_9FZFrf_2_PRjwvFTPUQ36COp_dqmghTwYfhbY5Y18";
+
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  return data.map((testimonial) => {
+    return {
+      params: { id: testimonial.id },
+      props: { testimonial },
+    };
+  });
+}
+const { testimonial } = Astro.props;
+console.log(testimonial);
+---
+
+<MainLay>
+  <main>
+    <p>"{testimonial.text}"</p>
+    <em>{testimonial.name}</em>
+  </main>
+</MainLay>
+
+<style>
+  main {
+    width: 90vw;
+    max-width: 500px;
+  }
+</style>
