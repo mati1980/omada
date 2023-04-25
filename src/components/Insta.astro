@@ -2,22 +2,25 @@
 ---
 
 <div class="icon_container">
-  <i class="fa-brands fa-instagram fa-2xl"></i>
+  <a target="_blank" href="https://www.figma.com/proto/l7Wm8HhZQC61XKxlIstTjl/Indhold?node-id=83-41&scaling=scale-down&page-id=83%3A40&starting-point-node-id=83%3A41"> <i class="fa-brands fa-instagram fa-2xl"></i></a>
 </div>
 
 <style>
   .icon_container {
-    margin-left: auto;
-    margin-top: 20%;
     height: 50px;
     width: 60px;
-
     background-color: var(--footer);
-    z-index: 100;
+    z-index: 10;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+    position: fixed;
+    right: 0;
+    top: 48vh;
     display: grid;
-    position: sticky;
+  }
+  a {
+    display: grid;
+    text-decoration: none;
   }
   .fa-brands {
     color: var(--maintekst);
